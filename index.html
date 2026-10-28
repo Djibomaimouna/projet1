@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruit Catch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <header class="hud">
+        <div class="score-box">
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="score-box">
+          <span>Meilleur</span>
+          <strong id="best-score">0</strong>
+        </div>
+        <div class="score-box">
+          <span>Vies</span>
+          <strong id="lives">3</strong>
+        </div>
+      </header>
+
+      <div id="gameArea" class="game-area" aria-label="Zone de jeu">
+        <div id="basket" class="basket" aria-label="Panier"></div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" type="button">Démarrer</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
