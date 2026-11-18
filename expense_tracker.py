@@ -1,14 +1,20 @@
 
 expenses = []
-
-def add_expense():
-    pass
-
 def show_expenses():
-    pass
+    if not expenses:
+        print("Aucune dépense enregistrée.")
+        return
+    for number, expense in enumerate(expenses, start=1):
+        print(f"{number}. {expense['description']} - {expense['amount']:.2f}")
 
 def show_total():
-    pass
+    total = sum(item['amount'] for item in expenses)
+    print(f"Total : {total:.2f}")
+
+def add_expense():
+    description = input("Description de la dépense : ")
+    amount = float(input("Montant de la dépense : "))
+    expenses.append({"description": description, "amount": amount})
 
 def main():
     while True:
