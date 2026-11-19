@@ -1,5 +1,11 @@
 
 expenses = []
+
+def add_expense():
+    description = input("Description de la dépense : ")
+    amount = float(input("Montant de la dépense : "))
+    expenses.append({"description": description, "amount": amount})
+
 def show_expenses():
     if not expenses:
         print("Aucune dépense enregistrée.")
@@ -8,13 +14,8 @@ def show_expenses():
         print(f"{number}. {expense['description']} - {expense['amount']:.2f}")
 
 def show_total():
-    total = sum(item['amount'] for item in expenses)
+    total = sum(expense["amount"] for expense in expenses)
     print(f"Total : {total:.2f}")
-
-def add_expense():
-    description = input("Description de la dépense : ")
-    amount = float(input("Montant de la dépense : "))
-    expenses.append({"description": description, "amount": amount})
 
 def main():
     while True:
@@ -31,7 +32,8 @@ def main():
         elif choice == "2":
             show_expenses()
         elif choice == "3":
-            show_total()
+            total = sum(expense["amount"] for expense in expenses)
+            print(f"Total : {total:.2f}")
         elif choice == "4":
             print("Au revoir !")
             break
